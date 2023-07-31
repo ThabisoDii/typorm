@@ -17,6 +17,11 @@ export class StaffMemberController {
     return this.staffMemberService.findAll();
   }
 
+  @Get("test")
+  encrypt() {
+    return this.staffMemberService.encrypt("");
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.staffMemberService.findOne(+id);

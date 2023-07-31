@@ -15,14 +15,16 @@ export class AssignedKpiRating {
     @Column()
     score:number;
     @Column()
+    weight:number
+    @Column()
     comments:string;
 
    // @Column({nullable:false})
-    @ManyToOne(type=>StaffMember,(staffMember) => staffMember.assignedKpiRatings)
+    @ManyToOne(type=>StaffMember,(staffMember) => staffMember.assignedKpiRatings,{ eager: true,nullable: false,})
     staffMember:StaffMember
 
    // @Column({nullable:false})
-    @ManyToOne(type=>Kpi,(kpi) => kpi.assignedKpiRatings)
+    @ManyToOne(type=>Kpi,(kpi) => kpi.assignedKpiRatings,{ eager: true,nullable: false,})
     kpi:Kpi
 
 
